@@ -1,4 +1,4 @@
-# SimGNN
+# SimGNN: Global Similarity as Heterophilous Graph Neural Network Aggregation
 This repo contains code for SimGNN, current under review on ICML 2023. We provide the codes for large-scale datasets here.
 
 ## Environment:
