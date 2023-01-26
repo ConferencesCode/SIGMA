@@ -22,12 +22,8 @@ We also provide the conda environment yml file [SimGNN/simgnn.yml], which you ca
 
 1. Download the large-scale datasets from [LINKX](https://github.com/CUAI/Non-Homophily-Large-Scale) to "data/" folder.
 
-2. Calculate the approximate simrank matrix using the Localpush implementation. Note that the input and output of Localpush are required all txt files having the following sample format:
+2. Calculate the approximate simrank matrix using the Localpush implementation. The input and output of Localpush are required all txt files.\n 
+Note that the input format is "node_u node_v", denoting each edge every single line. And the output format is "node_u node_v value", denoting the simrank score of node pair (node_u, node_v)
 
-'''
-node_u node_v
-1 2
-2 3
-3 6
-''' 
 
+3. 
