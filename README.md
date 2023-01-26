@@ -26,4 +26,10 @@ We also provide the conda environment yml file [SimGNN/simgnn.yml], which you ca
 Note that the input format is "node_u node_v", denoting each edge every single line. And the output format is "node_u node_v value", denoting the simrank score of node pair (node_u, node_v)
 
 
-3. 
+3. Convert the output txt into a sparse matrix either in ".pt" or in ".npz" format. For example, "fb100-simrank.pt".
+
+4. Finally! you can run pipelines. For example, to evaluate SimGNN on fb100 dataset, use the following command:
+
+```
+python main.py --method simgnn --dataset fb100 --sub_dataset Penn94 --simrank_file_name fb100-simrank.pt --hiddenunits 32 --lr 0.0007 --dropout 0.5 --weight_decay 0.0001 --delta 0.78 --epochs 200 --runs 5 --propa_mode post --skip_factor 1
+```
