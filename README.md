@@ -33,3 +33,5 @@ Note that the input format is "node_u node_v", denoting each edge every single l
 ```
 python main.py --method simgnn --dataset fb100 --sub_dataset Penn94 --simrank_file_name fb100-simrank.pt --hiddenunits 32 --lr 0.0007 --dropout 0.5 --weight_decay 0.0001 --delta 0.78 --epochs 200 --runs 5 --propa_mode post --skip_factor 1
 ```
+
+## Long-term dependacy case study.
