@@ -38,6 +38,6 @@ python main.py --method simgnn --dataset fb100 --sub_dataset Penn94 --simrank_fi
 
 ![avatar](case.png)
 
-The global attention based method [1] utilizes the transformer structure to learn the global attention among nodes in graph classifications. We change the original task into node classifications on dataset Chameleon. After training, the attention matrix is retrieved from the first layer of the transformer module. For multi-hop neighbors of a given node, we calculate the average number of the nodes with attention score non-trivial ($> \frac{1}{m}$).
+The global attention based method [1] utilizes the transformer structure to learn the global attention among nodes in graph classifications. We change the original task into node classifications on dataset Chameleon. After training, the attention matrix is retrieved from the first layer of the transformer module. For multi-hop neighbors of a given node, we calculate the average number of the neighbors with attention score for GraphTrans and SimRank score for SimGNN to be non-trivial ($> \frac{1}{m}$).
 
 [1] Representing long-range context for graph neural networks with global attention, Z. Wu et al. NeurIPS 2021.
