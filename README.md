@@ -36,4 +36,4 @@ python main.py --method simgnn --dataset fb100 --sub_dataset Penn94 --simrank_fi
 
 ## Long-term dependacy case study.
 
-![avatar](long-term dependacy.png)
+![avatar](https://github.com/ConferencesCode/SimGNN/blob/master/long-term dependacy.png)
