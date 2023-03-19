@@ -37,3 +37,7 @@ python main.py --method simgnn --dataset fb100 --sub_dataset Penn94 --simrank_fi
 ## Long-term dependacy case study.
 
 ![avatar](case.png)
+
+The global attention based method [1] utilizes the transformer structure to learn the global attention among nodes in graph classifications. We change the original task into node classifications on dataset Chameleon. After training, the attention matrix is retrieved from the first layer of the transformer module. 
+
+[1] Representing long-range context for graph neural networks with global attention, Z. Wu et al. NeurIPS 2021.
