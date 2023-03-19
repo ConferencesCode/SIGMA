@@ -38,9 +38,9 @@ python main.py --method simgnn --dataset fb100 --sub_dataset Penn94 --simrank_fi
 
 ![avatar](case.png)
 
-The global attention based method [1] utilizes the transformer structure to learn the global attention among nodes in graph classifications. We change the original task into node classifications on dataset Chameleon. After training, the attention matrix is retrieved from the first layer of the transformer module. 
+The global attention based method [1] utilizes the transformer structure to learn the global attention among nodes in graph classifications. We change the original task into node classifications on the dataset Chameleon. After training, the attention matrix is retrieved from the first layer of the transformer module. 
 
-In the figure, we first calculate the average number of k-hop neighbors that share the same label with a node shown as the blue bar. Then, we calculate the average number of these neighbors holding a non-trivial attention(similarity) scores, i.e. $s(u,v) > \frac{1}{m}$ for GraphTrans(SimGNN), where $m$ denotes the edge amount.
+In the figure, we first calculate the average number of k-hop neighbors that share the same label with a node shown as the blue bar. Then, we calculate the average number of these neighbors holding a non-trivial attention(similarity) scores, i.e. $s(u,v) > \frac{1}{m}$ for GraphTrans(SimGNN), where $m$ denotes the edge amount. The x-axis denotes the hop amount and y-axis is the log scaled amount.
 
 We can observe in the figure that both GraphTrans and SimGNN can capture long-term dependacy effectively in general. While, as the distance becomes extreme large, SimRank seems to show weaker ability to link the homophily nodes than the global attention scores, which points out a potential direction to improve SimGNN and also heterophily graph learning.
 
