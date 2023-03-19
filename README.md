@@ -1,4 +1,4 @@
-# SimGNN
+# SimGNN: Global Similarity as Heterophilous Graph Neural Network Aggregation. (Submission Number: 4155)
 This repo contains code for SimGNN, current under review on ICML 2023. We provide the codes for large-scale datasets here.
 
 ## Environment:
@@ -22,12 +22,22 @@ We also provide the conda environment yml file [SimGNN/simgnn.yml], which you ca
 
 1. Download the large-scale datasets from [LINKX](https://github.com/CUAI/Non-Homophily-Large-Scale) to "data/" folder.
 
-2. Calculate the approximate simrank matrix using the Localpush implementation. Note that the input and output of Localpush are required all txt files having the following sample format:
+2. Calculate the approximate simrank matrix using the Localpush implementation. The input and output of Localpush are required all txt files.\n 
+Note that the input format is "node_u node_v", denoting each edge every single line. And the output format is "node_u node_v value", denoting the simrank score of node pair (node_u, node_v)
 
-'''
-node_u node_v
-1 2
-2 3
-3 6
-''' 
 
+3. Convert the output txt into a sparse matrix either in ".pt" or in ".npz" format. For example, "fb100-simrank.pt".
+
+4. Finally! you can run pipelines. For example, to evaluate SimGNN on fb100 dataset, use the following command:
+
+```
+python main.py --method simgnn --dataset fb100 --sub_dataset Penn94 --simrank_file_name fb100-simrank.pt --hiddenunits 32 --lr 0.0007 --dropout 0.5 --weight_decay 0.0001 --delta 0.78 --epochs 200 --runs 5 --propa_mode post --skip_factor 1
+```
+
+## Long-term dependacy case study.
+
+![avatar](case.png)
+
+The global attention based method [1] utilizes the transformer structure to learn the global attention among nodes in graph classifications. We change the original task into node classifications on dataset Chameleon. After training, the attention matrix is retrieved from the first layer of the transformer module. For multi-hop neighbors of a given node, we calculate the average number of the neighbors with attention score for GraphTrans and SimRank score for SimGNN to be non-trivial, i.e. $s(u,v) > \frac{1}{m}$.
+
+[1] Representing long-range context for graph neural networks with global attention, Z. Wu et al. NeurIPS 2021.
