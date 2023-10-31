@@ -1,5 +1,5 @@
 # SIGMA: Similarity-based Efficient Global Aggregation for Heterophilous Graph Neural Networks
-This repo contains code for SimGNN, current under review on WWW 2024. We provide the codes for large-scale datasets here.
+This repo contains code for SIGMA, current under review on WWW 2024. We provide the codes for large-scale datasets here.
 
 ## Environment:
 The implemetation is based on python and C++ (for simrank computations). 
