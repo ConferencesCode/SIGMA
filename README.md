@@ -34,14 +34,3 @@ Note that the input format is "node_u node_v", denoting each edge every single l
 python main.py --method simgnn --dataset fb100 --sub_dataset Penn94 --simrank_file_name fb100-simrank.pt --hiddenunits 32 --lr 0.0007 --dropout 0.5 --weight_decay 0.0001 --delta 0.78 --epochs 200 --runs 5 --propa_mode post --skip_factor 1
 ```
 
-## Long-term dependacy case study.
-
-![avatar](case.png)
-
-The global attention based method [1] utilizes the transformer structure to learn the global attention among nodes in graph classifications. We change the original task into node classifications on the dataset Chameleon. After training, the attention matrix is retrieved from the first layer of the transformer module and normalized rowly.
-
-In the figure, we first calculate the average number of k-hop neighbors that share the same label with a node shown as the blue bar. Then, we calculate the average number of these neighbors holding a non-trivial attention/similarity scores, i.e. $s(u,v) > \frac{1}{m}$ for GraphTrans/SimGNN, where $m$ denotes the edge amount. The x-axis denotes the hop amount and y-axis is the log scaled amount.
-
-We can observe in the figure that both GraphTrans and SimGNN can capture long-term dependacy effectively in general. While, as the distance becomes extreme large (> 10-hop), SimRank seems to show weaker ability to link the homophily nodes than the global attention scores, which points out a potential direction to improve SimGNN and also heterophily graph learning.
-
-[1] Representing long-range context for graph neural networks with global attention, Z. Wu et al. NeurIPS 2021.
